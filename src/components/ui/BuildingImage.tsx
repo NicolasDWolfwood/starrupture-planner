@@ -21,7 +21,10 @@ export const BuildingImage = ({
   size = 'large',
   style = {}
 }: BuildingImageProps) => {
-  const imagePath = `./icons/buildings/${buildingId}.jpg`;
+  const normalizedId = buildingId.includes('-') ? buildingId.replace(/-/g, '_') : buildingId.replace(/_/g, '-');
+  const variants = buildingId === normalizedId ? [buildingId] : [buildingId, normalizedId];
+  const candidates = variants.map(id => `/icons/buildings/${id}.jpg`);
+  const imagePath = candidates[0];
   const baseClasses = `${sizeClasses[size]} object-cover rounded`;
   const finalClassName = className ? `${baseClasses} ${className}` : baseClasses;
   
@@ -33,9 +36,11 @@ export const BuildingImage = ({
       style={style}
       onError={(e) => {
         const target = e.target as HTMLImageElement;
-        if (!target.dataset.fallback) {
-          target.dataset.fallback = 'webp';
-          target.src = `./icons/buildings/${buildingId}.webp`;
+        const currentIndex = Number(target.dataset.iconIndex || '0');
+        const nextIndex = currentIndex + 1;
+        if (nextIndex < candidates.length) {
+          target.dataset.iconIndex = String(nextIndex);
+          target.src = candidates[nextIndex];
           return;
         }
         target.style.display = 'none';
