@@ -110,6 +110,11 @@
     "type": "processed"
   },
   {
+    "id": "liquid_helium",
+    "name": "Liquid Helium",
+    "type": "processed"
+  },
+  {
     "id": "sulphuric_acid",
     "name": "Sulphuric Acid",
     "type": "processed"
@@ -257,6 +262,11 @@
   {
     "id": "epoxy",
     "name": "Epoxy",
+    "type": "processed"
+  },
+  {
+    "id": "synthetic_resin",
+    "name": "Synthetic Resin",
     "type": "processed"
   },
   {

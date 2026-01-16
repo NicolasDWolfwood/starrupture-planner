@@ -736,6 +736,66 @@
     "recipes": [
       {
         "output": {
+          "id": "accumulator",
+          "amount_per_minute": 10
+        },
+        "inputs": [
+          {
+            "id": "electronics",
+            "amount_per_minute": 20
+          },
+          {
+            "id": "stator",
+            "amount_per_minute": 10
+          },
+          {
+            "id": "battery",
+            "amount_per_minute": 20
+          }
+        ]
+      },
+      {
+        "output": {
+          "id": "generator",
+          "amount_per_minute": 1
+        },
+        "inputs": [
+          {
+            "id": "turbine",
+            "amount_per_minute": 1
+          },
+          {
+            "id": "battery",
+            "amount_per_minute": 1
+          },
+          {
+            "id": "nozzle",
+            "amount_per_minute": 1
+          }
+        ]
+      },
+      {
+        "output": {
+          "id": "electromagnet",
+          "amount_per_minute": 12
+        },
+        "inputs": [
+          {
+            "id": "electromagnetic_coil",
+            "amount_per_minute": 36
+          },
+          {
+            "id": "synthetic_resin",
+            "amount_per_minute": 36
+          },
+          {
+            "id": "accumulator",
+            "amount_per_minute": 24
+          }
+        ]
+      },
+      {
+        "output": {
           "id": "pressure_tank",
           "amount_per_minute": 5
         },
@@ -755,6 +815,90 @@
           {
             "id": "valve",
             "amount_per_minute": 10
+          }
+        ]
+      },
+      {
+        "output": {
+          "id": "resonator",
+          "amount_per_minute": 5
+        },
+        "inputs": [
+          {
+            "id": "accumulator",
+            "amount_per_minute": 5
+          },
+          {
+            "id": "generator",
+            "amount_per_minute": 10
+          },
+          {
+            "id": "liquid_helium",
+            "amount_per_minute": 10
+          }
+        ]
+      },
+      {
+        "output": {
+          "id": "condenser",
+          "amount_per_minute": 4
+        },
+        "inputs": [
+          {
+            "id": "resonator",
+            "amount_per_minute": 4
+          },
+          {
+            "id": "synthetic_resin",
+            "amount_per_minute": 12
+          },
+          {
+            "id": "nanofibre",
+            "amount_per_minute": 32
+          },
+          {
+            "id": "pump",
+            "amount_per_minute": 12
+          }
+        ]
+      },
+      {
+        "output": {
+          "id": "laser_emitter",
+          "amount_per_minute": 10
+        },
+        "inputs": [
+          {
+            "id": "lens",
+            "amount_per_minute": 20
+          },
+          {
+            "id": "resonator",
+            "amount_per_minute": 10
+          },
+          {
+            "id": "electromagnetic_coil",
+            "amount_per_minute": 60
+          }
+        ]
+      },
+      {
+        "output": {
+          "id": "scanner",
+          "amount_per_minute": 1
+        },
+        "inputs": [
+          {
+            "id": "lens",
+            "amount_per_minute": 2
+          },
+          {
+            "id": "generator",
+            "amount_per_minute": 2
+          },
+          {
+            "id": "stabilizer",
+            "amount_per_minute": 12
           }
         ]
       }
