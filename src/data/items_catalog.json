@@ -290,6 +290,31 @@
     "type": "processed"
   },
   {
+    "id": "organic_compound",
+    "name": "Organic Compound",
+    "type": "processed"
+  },
+  {
+    "id": "basic_fuel",
+    "name": "Basic Fuel",
+    "type": "processed"
+  },
+  {
+    "id": "rocket_fuel",
+    "name": "Rocket Fuel",
+    "type": "processed"
+  },
+  {
+    "id": "synthetic_protein",
+    "name": "Synthetic Protein",
+    "type": "processed"
+  },
+  {
+    "id": "synthetic_dna",
+    "name": "Synthetic DNA",
+    "type": "component"
+  },
+  {
     "id": "bioprinter",
     "name": "Bioprinter",
     "type": "component"

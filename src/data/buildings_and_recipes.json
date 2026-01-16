@@ -1024,6 +1024,325 @@
     ]
   },
   {
+    "id": "research_lab",
+    "name": "Research Lab",
+    "power": 80,
+    "recipes": [
+      {
+        "output": {
+          "id": "plastic_dust",
+          "amount_per_minute": 2
+        },
+        "inputs": [
+          {
+            "id": "organic_compound",
+            "amount_per_minute": 3
+          },
+          {
+            "id": "synthetic_resin",
+            "amount_per_minute": 2
+          },
+          {
+            "id": "uber_oil",
+            "amount_per_minute": 1
+          },
+          {
+            "id": "powder_calcium",
+            "amount_per_minute": 1
+          }
+        ]
+      },
+      {
+        "output": {
+          "id": "synthetic_protein",
+          "amount_per_minute": 2
+        },
+        "inputs": [
+          {
+            "id": "organic_compound",
+            "amount_per_minute": 2
+          },
+          {
+            "id": "nanofibre",
+            "amount_per_minute": 3
+          },
+          {
+            "id": "uber_oil",
+            "amount_per_minute": 1
+          },
+          {
+            "id": "sulphuric_acid",
+            "amount_per_minute": 3
+          }
+        ]
+      },
+      {
+        "output": {
+          "id": "ion_stabilizer",
+          "amount_per_minute": 1
+        },
+        "inputs": [
+          {
+            "id": "synthetic_resin",
+            "amount_per_minute": 3
+          },
+          {
+            "id": "liquid_helium",
+            "amount_per_minute": 2
+          },
+          {
+            "id": "sulphuric_acid",
+            "amount_per_minute": 2
+          },
+          {
+            "id": "uber_oil",
+            "amount_per_minute": 2
+          }
+        ]
+      },
+      {
+        "output": {
+          "id": "pseudorubber_insulator",
+          "amount_per_minute": 10
+        },
+        "inputs": [
+          {
+            "id": "uber_oil",
+            "amount_per_minute": 10
+          },
+          {
+            "id": "epoxy",
+            "amount_per_minute": 5
+          },
+          {
+            "id": "synthetic_resin",
+            "amount_per_minute": 15
+          },
+          {
+            "id": "nanofibre",
+            "amount_per_minute": 10
+          }
+        ]
+      },
+      {
+        "output": {
+          "id": "substance_fhs_135_493",
+          "amount_per_minute": 2
+        },
+        "inputs": [
+          {
+            "id": "sulphuric_acid",
+            "amount_per_minute": 2
+          },
+          {
+            "id": "uber_oil",
+            "amount_per_minute": 2
+          },
+          {
+            "id": "liquid_helium",
+            "amount_per_minute": 2
+          },
+          {
+            "id": "explosive",
+            "amount_per_minute": 3
+          }
+        ]
+      },
+      {
+        "output": {
+          "id": "rna_stabilizer",
+          "amount_per_minute": 10
+        },
+        "inputs": [
+          {
+            "id": "organic_compound",
+            "amount_per_minute": 10
+          },
+          {
+            "id": "syringe",
+            "amount_per_minute": 5
+          },
+          {
+            "id": "synthetic_silicon",
+            "amount_per_minute": 10
+          },
+          {
+            "id": "uber_oil",
+            "amount_per_minute": 5
+          }
+        ]
+      },
+      {
+        "output": {
+          "id": "rtsc",
+          "amount_per_minute": 4
+        },
+        "inputs": [
+          {
+            "id": "superconductor",
+            "amount_per_minute": 4
+          },
+          {
+            "id": "uber_oil",
+            "amount_per_minute": 4
+          },
+          {
+            "id": "aerogel",
+            "amount_per_minute": 8
+          },
+          {
+            "id": "electromagnet",
+            "amount_per_minute": 8
+          }
+        ]
+      },
+      {
+        "output": {
+          "id": "uberfilament",
+          "amount_per_minute": 8
+        },
+        "inputs": [
+          {
+            "id": "nanofibre",
+            "amount_per_minute": 12
+          },
+          {
+            "id": "plastic_dust",
+            "amount_per_minute": 8
+          },
+          {
+            "id": "epoxy",
+            "amount_per_minute": 8
+          },
+          {
+            "id": "sulphuric_acid",
+            "amount_per_minute": 12
+          }
+        ]
+      },
+      {
+        "output": {
+          "id": "biofilament",
+          "amount_per_minute": 2
+        },
+        "inputs": [
+          {
+            "id": "synthetic_protein",
+            "amount_per_minute": 1
+          },
+          {
+            "id": "rna_stabilizer",
+            "amount_per_minute": 2
+          },
+          {
+            "id": "substance_fhs_135_493",
+            "amount_per_minute": 1
+          },
+          {
+            "id": "nanofibre",
+            "amount_per_minute": 2
+          }
+        ]
+      },
+      {
+        "output": {
+          "id": "carbon_sonar",
+          "amount_per_minute": 4
+        },
+        "inputs": [
+          {
+            "id": "ion_stabilizer",
+            "amount_per_minute": 4
+          },
+          {
+            "id": "electromagnet",
+            "amount_per_minute": 4
+          },
+          {
+            "id": "accumulator",
+            "amount_per_minute": 8
+          },
+          {
+            "id": "inductor",
+            "amount_per_minute": 12
+          }
+        ]
+      },
+      {
+        "output": {
+          "id": "quantum_tranqualizer",
+          "amount_per_minute": 4
+        },
+        "inputs": [
+          {
+            "id": "ion_stabilizer",
+            "amount_per_minute": 4
+          },
+          {
+            "id": "superconductor",
+            "amount_per_minute": 8
+          },
+          {
+            "id": "ion_injector",
+            "amount_per_minute": 4
+          },
+          {
+            "id": "sulphuric_acid",
+            "amount_per_minute": 12
+          }
+        ]
+      },
+      {
+        "output": {
+          "id": "rocket_fuel",
+          "amount_per_minute": 8
+        },
+        "inputs": [
+          {
+            "id": "liquid_helium",
+            "amount_per_minute": 12
+          },
+          {
+            "id": "basic_fuel",
+            "amount_per_minute": 12
+          },
+          {
+            "id": "sulphuric_acid",
+            "amount_per_minute": 12
+          },
+          {
+            "id": "uber_oil",
+            "amount_per_minute": 8
+          }
+        ]
+      },
+      {
+        "output": {
+          "id": "synthetic_dna",
+          "amount_per_minute": 4
+        },
+        "inputs": [
+          {
+            "id": "synthetic_protein",
+            "amount_per_minute": 4
+          },
+          {
+            "id": "substance_fhs_135_493",
+            "amount_per_minute": 8
+          },
+          {
+            "id": "nanosyringe",
+            "amount_per_minute": 4
+          },
+          {
+            "id": "uber_oil",
+            "amount_per_minute": 8
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "constructorizer",
     "name": "Constructorizer",
     "power": 80,
