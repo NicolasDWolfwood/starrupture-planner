@@ -304,6 +304,57 @@
     ]
   },
   {
+    "id": "forge",
+    "name": "Pyro Forge",
+    "power": 60,
+    "recipes": [
+      {
+        "output": {
+          "id": "goethite_ingot",
+          "amount_per_minute": 60
+        },
+        "inputs": [
+          {
+            "id": "ore_goethite",
+            "amount_per_minute": 180
+          }
+        ]
+      },
+      {
+        "output": {
+          "id": "uber_wolfram",
+          "amount_per_minute": 60
+        },
+        "inputs": [
+          {
+            "id": "bar_wolfram",
+            "amount_per_minute": 120
+          },
+          {
+            "id": "ore_goethite",
+            "amount_per_minute": 120
+          }
+        ]
+      },
+      {
+        "output": {
+          "id": "uber_titanium",
+          "amount_per_minute": 120
+        },
+        "inputs": [
+          {
+            "id": "bar_titanium",
+            "amount_per_minute": 120
+          },
+          {
+            "id": "ore_goethite",
+            "amount_per_minute": 120
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "fabricator",
     "name": "Fabricator",
     "power": 10,

@@ -150,6 +150,11 @@
     "type": "processed"
   },
   {
+    "id": "goethite_ingot",
+    "name": "Goethite Ingot",
+    "type": "processed"
+  },
+  {
     "id": "powder_wolfram",
     "name": "Wolfram Powder",
     "type": "processed"
@@ -392,6 +397,11 @@
   {
     "id": "uber_titanium",
     "name": "Titanoferrite Ingot",
+    "type": "processed"
+  },
+  {
+    "id": "uber_wolfram",
+    "name": "Wolfram Steel Ingot",
     "type": "processed"
   },
   {
