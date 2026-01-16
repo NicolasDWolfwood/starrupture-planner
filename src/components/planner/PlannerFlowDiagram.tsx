@@ -50,6 +50,7 @@ export const PlannerFlowDiagram: React.FC<PlannerFlowDiagramProps> = ({
     // React Flow state
     const [nodes, setNodes, onNodesChange] = useNodesState<Node>([]);
     const [edges, setEdges, onEdgesChange] = useEdgesState<Edge>([]);
+    const [nodePositions, setNodePositions] = useState<Record<string, { x: number; y: number }>>({});
     const [oreSourcesByItem, setOreSourcesByItem] = useState<Record<string, OreQuality[]>>({});
     const shouldFitView = useRef(true);
 
@@ -90,6 +91,13 @@ export const PlannerFlowDiagram: React.FC<PlannerFlowDiagramProps> = ({
         });
     }, []);
 
+    const handleNodeDragStop = useCallback((_: React.MouseEvent, node: Node) => {
+        setNodePositions((current) => ({
+            ...current,
+            [node.id]: node.position
+        }));
+    }, []);
+
     // Generate flow data when inputs change
     const updateFlowData = useCallback(() => {
         if (selectedItemId) {
@@ -105,7 +113,8 @@ export const PlannerFlowDiagram: React.FC<PlannerFlowDiagramProps> = ({
                 oreSourcesByItem,
                 onOreQualityChange: handleOreQualityChange,
                 onAddOreSource: handleAddOreSource,
-                onRemoveOreSource: handleRemoveOreSource
+                onRemoveOreSource: handleRemoveOreSource,
+                nodePositions
             });
             
             setNodes(newNodes);
@@ -127,6 +136,7 @@ export const PlannerFlowDiagram: React.FC<PlannerFlowDiagramProps> = ({
         handleOreQualityChange,
         handleAddOreSource,
         handleRemoveOreSource,
+        nodePositions,
         setNodes,
         setEdges
     ]);
@@ -139,7 +149,7 @@ export const PlannerFlowDiagram: React.FC<PlannerFlowDiagramProps> = ({
     // Only auto-fit on initial load or target/item changes
     useEffect(() => {
         shouldFitView.current = true;
-    }, [selectedItemId, targetAmount]);
+    }, [selectedItemId]);
 
     // Auto-fit view when nodes change
     useEffect(() => {
@@ -176,6 +186,7 @@ export const PlannerFlowDiagram: React.FC<PlannerFlowDiagramProps> = ({
                 colorMode={theme}
                 onNodesChange={onNodesChange}
                 onEdgesChange={onEdgesChange}
+                onNodeDragStop={handleNodeDragStop}
                 nodeTypes={nodeTypes}
                 edgeTypes={edgeTypes}
                 attributionPosition="bottom-left"

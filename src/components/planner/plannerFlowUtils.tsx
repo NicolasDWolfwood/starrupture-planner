@@ -21,6 +21,7 @@ export interface FlowDataGenerationParams {
     onOreQualityChange?: (itemId: string, sourceIndex: number, quality: OreQuality) => void;
     onAddOreSource?: (itemId: string) => void;
     onRemoveOreSource?: (itemId: string, sourceIndex: number) => void;
+    nodePositions: Record<string, { x: number; y: number }>;
 }
 
 export interface FlowData {
@@ -50,7 +51,8 @@ export const generateReactFlowData = ({
     oreSourcesByItem,
     onOreQualityChange,
     onAddOreSource,
-    onRemoveOreSource
+    onRemoveOreSource,
+    nodePositions
 }: FlowDataGenerationParams): FlowData => {
     // Use fallback of 1 if amount is 0 or invalid (for temporary empty input state)
     const validAmount = targetAmount > 0 ? targetAmount : 1;
@@ -70,6 +72,7 @@ export const generateReactFlowData = ({
     }, buildings, corporations, levels);
 
     const expandedNodes: Array<{
+        id: string;
         node: ProductionNode;
         originalKey: string;
         sourceIndex?: number;
@@ -91,6 +94,7 @@ export const generateReactFlowData = ({
             const share = sources.length > 0 ? 1 / sources.length : 1;
 
             sources.forEach((quality, sourceIndex) => {
+                const nodeId = `${nodeKey}__source_${sourceIndex}`;
                 const outputRate = ORE_QUALITY_RATES[quality];
                 const buildingCount = outputRate > 0 ? (totalDemand * share) / outputRate : 0;
                 const totalPower = Math.ceil(buildingCount) * node.powerPerBuilding;
@@ -102,8 +106,8 @@ export const generateReactFlowData = ({
                     totalPower
                 };
 
-                const expandedIndex = expandedNodes.length;
                 expandedNodes.push({
+                    id: nodeId,
                     node: splitNode,
                     originalKey: nodeKey,
                     sourceIndex,
@@ -111,15 +115,15 @@ export const generateReactFlowData = ({
                     sourceQuality: quality
                 });
                 const indexes = nodeKeyToExpandedIndexes.get(nodeKey) ?? [];
-                indexes.push(expandedIndex);
+                indexes.push(expandedNodes.length - 1);
                 nodeKeyToExpandedIndexes.set(nodeKey, indexes);
             });
             return;
         }
 
-        const expandedIndex = expandedNodes.length;
-        expandedNodes.push({ node, originalKey: nodeKey });
-        nodeKeyToExpandedIndexes.set(nodeKey, [expandedIndex]);
+        const nodeId = nodeKey;
+        expandedNodes.push({ id: nodeId, node, originalKey: nodeKey });
+        nodeKeyToExpandedIndexes.set(nodeKey, [expandedNodes.length - 1]);
     });
 
     const expandedEdges: Array<{
@@ -157,13 +161,17 @@ export const generateReactFlowData = ({
     dagreGraph.setGraph({ rankdir: 'LR', ranksep: 150, nodesep: 100 });
 
     // Add all nodes to the layout graph
-    expandedNodes.forEach((_, index) => {
-        dagreGraph.setNode(`node_${index}`, { width: 200, height: 120 });
+    expandedNodes.forEach((entry) => {
+        dagreGraph.setNode(entry.id, { width: 200, height: 120 });
     });
 
     // Add edges to define the layout relationships
     expandedEdges.forEach((edge) => {
-        dagreGraph.setEdge(`node_${edge.fromIndex}`, `node_${edge.toIndex}`);
+        const fromId = expandedNodes[edge.fromIndex]?.id;
+        const toId = expandedNodes[edge.toIndex]?.id;
+        if (fromId && toId) {
+            dagreGraph.setEdge(fromId, toId);
+        }
     });
 
     // Calculate positions using Dagre
@@ -173,8 +181,13 @@ export const generateReactFlowData = ({
     const totalPowerConsumption = expandedNodes.reduce((sum, entry) => sum + entry.node.totalPower, 0);
 
     // Convert flow nodes to React Flow nodes with positioning and styling
-    const reactFlowNodes: Node[] = expandedNodes.map(({ node, sourceIndex, sourceCount, sourceQuality }, index) => {
-        const nodeWithPosition = dagreGraph.node(`node_${index}`);
+    const reactFlowNodes: Node[] = expandedNodes.map(({ id, node, sourceIndex, sourceCount, sourceQuality }) => {
+        const nodeWithPosition = dagreGraph.node(id);
+        const storedPosition = nodePositions[id];
+        const position = storedPosition ?? {
+            x: nodeWithPosition.x - 100,
+            y: nodeWithPosition.y - 60
+        };
 
         // Helper function to check if node is Orbital Cargo Launcher
         const isOrbitalCargoLauncher = (n: ProductionNode): n is OrbitalCargoLauncherNode => {
@@ -188,9 +201,9 @@ export const generateReactFlowData = ({
             : null;
 
         return {
-            id: `node_${index}`,
+            id,
             type: 'default',
-            position: { x: nodeWithPosition.x - 100, y: nodeWithPosition.y - 60 },
+            position,
             data: {
                 label: isLauncher ? (
                     // Special rendering for Orbital Cargo Launcher
@@ -357,8 +370,11 @@ export const generateReactFlowData = ({
     const edgeIdSet = new Set<string>();
 
     expandedEdges.forEach((edge) => {
-        const fromNodeId = `node_${edge.fromIndex}`;
-        const toNodeId = `node_${edge.toIndex}`;
+        const fromNodeId = expandedNodes[edge.fromIndex]?.id;
+        const toNodeId = expandedNodes[edge.toIndex]?.id;
+        if (!fromNodeId || !toNodeId) {
+            return;
+        }
         const edgeId = `${fromNodeId}-${toNodeId}-${edge.itemId}`;
 
         // Safety check: prevent duplicate React Flow edges
