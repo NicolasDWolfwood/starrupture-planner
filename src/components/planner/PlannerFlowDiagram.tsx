@@ -50,14 +50,44 @@ export const PlannerFlowDiagram: React.FC<PlannerFlowDiagramProps> = ({
     // React Flow state
     const [nodes, setNodes, onNodesChange] = useNodesState<Node>([]);
     const [edges, setEdges, onEdgesChange] = useEdgesState<Edge>([]);
-    const [oreQualityByItem, setOreQualityByItem] = useState<Record<string, OreQuality>>({});
+    const [oreSourcesByItem, setOreSourcesByItem] = useState<Record<string, OreQuality[]>>({});
     const shouldFitView = useRef(true);
 
-    const handleOreQualityChange = useCallback((itemId: string, quality: OreQuality) => {
-        setOreQualityByItem((current) => ({
-            ...current,
-            [itemId]: quality
-        }));
+    const handleOreQualityChange = useCallback((itemId: string, sourceIndex: number, quality: OreQuality) => {
+        setOreSourcesByItem((current) => {
+            const sources = current[itemId] ?? ['normal'];
+            const nextSources = [...sources];
+            nextSources[sourceIndex] = quality;
+            return {
+                ...current,
+                [itemId]: nextSources
+            };
+        });
+    }, []);
+    
+    const handleAddOreSource = useCallback((itemId: string) => {
+        setOreSourcesByItem((current) => {
+            const sources = current[itemId] ?? ['normal'];
+            const lastQuality = sources[sources.length - 1] ?? 'normal';
+            return {
+                ...current,
+                [itemId]: [...sources, lastQuality]
+            };
+        });
+    }, []);
+
+    const handleRemoveOreSource = useCallback((itemId: string, sourceIndex: number) => {
+        setOreSourcesByItem((current) => {
+            const sources = current[itemId] ?? ['normal'];
+            if (sources.length <= 1) {
+                return current;
+            }
+            const nextSources = sources.filter((_, index) => index !== sourceIndex);
+            return {
+                ...current,
+                [itemId]: nextSources.length > 0 ? nextSources : ['normal']
+            };
+        });
     }, []);
 
     // Generate flow data when inputs change
@@ -72,8 +102,10 @@ export const PlannerFlowDiagram: React.FC<PlannerFlowDiagramProps> = ({
                 items,
                 getItemColor,
                 getBuildingColor,
-                oreQualityByItem,
-                onOreQualityChange: handleOreQualityChange
+                oreSourcesByItem,
+                onOreQualityChange: handleOreQualityChange,
+                onAddOreSource: handleAddOreSource,
+                onRemoveOreSource: handleRemoveOreSource
             });
             
             setNodes(newNodes);
@@ -91,8 +123,10 @@ export const PlannerFlowDiagram: React.FC<PlannerFlowDiagramProps> = ({
         items,
         getItemColor,
         getBuildingColor,
-        oreQualityByItem,
+        oreSourcesByItem,
         handleOreQualityChange,
+        handleAddOreSource,
+        handleRemoveOreSource,
         setNodes,
         setEdges
     ]);
