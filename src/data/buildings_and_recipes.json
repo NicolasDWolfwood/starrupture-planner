@@ -905,6 +905,125 @@
     ]
   },
   {
+    "id": "synthetizer",
+    "name": "Compounder",
+    "power": 60,
+    "recipes": [
+      {
+        "output": {
+          "id": "synthetic_resin",
+          "amount_per_minute": 20
+        },
+        "inputs": [
+          {
+            "id": "hardening_agent",
+            "amount_per_minute": 40
+          },
+          {
+            "id": "sulphuric_acid",
+            "amount_per_minute": 80
+          },
+          {
+            "id": "calcite_sheets",
+            "amount_per_minute": 200
+          }
+        ]
+      },
+      {
+        "output": {
+          "id": "liquid_helium",
+          "amount_per_minute": 20
+        },
+        "inputs": [
+          {
+            "id": "pressurized_helium",
+            "amount_per_minute": 20
+          },
+          {
+            "id": "hardening_agent",
+            "amount_per_minute": 20
+          }
+        ]
+      },
+      {
+        "output": {
+          "id": "lens",
+          "amount_per_minute": 5
+        },
+        "inputs": [
+          {
+            "id": "glass",
+            "amount_per_minute": 50
+          },
+          {
+            "id": "hardening_agent",
+            "amount_per_minute": 40
+          },
+          {
+            "id": "synthetic_resin",
+            "amount_per_minute": 40
+          }
+        ]
+      },
+      {
+        "output": {
+          "id": "nanofibre",
+          "amount_per_minute": 12
+        },
+        "inputs": [
+          {
+            "id": "tube",
+            "amount_per_minute": 240
+          },
+          {
+            "id": "liquid_helium",
+            "amount_per_minute": 60
+          }
+        ]
+      },
+      {
+        "output": {
+          "id": "ion_injector",
+          "amount_per_minute": 5
+        },
+        "inputs": [
+          {
+            "id": "syringe",
+            "amount_per_minute": 50
+          },
+          {
+            "id": "electromagnet",
+            "amount_per_minute": 20
+          },
+          {
+            "id": "pressure_tank",
+            "amount_per_minute": 10
+          }
+        ]
+      },
+      {
+        "output": {
+          "id": "superconductor",
+          "amount_per_minute": 12
+        },
+        "inputs": [
+          {
+            "id": "ceramics",
+            "amount_per_minute": 84
+          },
+          {
+            "id": "electromagnet",
+            "amount_per_minute": 24
+          },
+          {
+            "id": "supermagnet",
+            "amount_per_minute": 96
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "constructorizer",
     "name": "Constructorizer",
     "power": 80,
