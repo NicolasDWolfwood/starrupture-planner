@@ -32,7 +32,13 @@ export const BuildingImage = ({
       className={finalClassName}
       style={style}
       onError={(e) => {
-        (e.target as HTMLImageElement).style.display = 'none';
+        const target = e.target as HTMLImageElement;
+        if (!target.dataset.fallback) {
+          target.dataset.fallback = 'webp';
+          target.src = `./icons/buildings/${buildingId}.webp`;
+          return;
+        }
+        target.style.display = 'none';
       }}
     />
   );

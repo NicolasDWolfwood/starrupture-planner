@@ -170,6 +170,11 @@
     "type": "component"
   },
   {
+    "id": "pump",
+    "name": "Pump",
+    "type": "component"
+  },
+  {
     "id": "rotor",
     "name": "Rotor",
     "type": "component"
@@ -238,5 +243,270 @@
     "id": "standard_ammo",
     "name": "Standard Ammo",
     "type": "ammo"
+  },
+  {
+    "id": "airlock",
+    "name": "Airlock",
+    "type": "component"
+  },
+  {
+    "id": "scafolding",
+    "name": "Scafolding",
+    "type": "component"
+  },
+  {
+    "id": "epoxy",
+    "name": "Epoxy",
+    "type": "processed"
+  },
+  {
+    "id": "anti_radiation_covers",
+    "name": "Anti-Radiation Covers",
+    "type": "component"
+  },
+  {
+    "id": "reinforced_housing",
+    "name": "Reinforced Housing",
+    "type": "component"
+  },
+  {
+    "id": "reinforced_frame",
+    "name": "Reinforced Frame",
+    "type": "component"
+  },
+  {
+    "id": "uber_oil",
+    "name": "Plastic",
+    "type": "processed"
+  },
+  {
+    "id": "bioprinter",
+    "name": "Bioprinter",
+    "type": "component"
+  },
+  {
+    "id": "scanner",
+    "name": "Scanner",
+    "type": "component"
+  },
+  {
+    "id": "biofilament",
+    "name": "Biofilament",
+    "type": "processed"
+  },
+  {
+    "id": "control_systems",
+    "name": "Control Systems",
+    "type": "component"
+  },
+  {
+    "id": "accumulator",
+    "name": "Accumulator",
+    "type": "component"
+  },
+  {
+    "id": "converter",
+    "name": "Converter",
+    "type": "component"
+  },
+  {
+    "id": "laser_emitter",
+    "name": "Laser Emitter",
+    "type": "component"
+  },
+  {
+    "id": "superconductor",
+    "name": "Superconductor",
+    "type": "processed"
+  },
+  {
+    "id": "cyclotrone",
+    "name": "Cyclotrone",
+    "type": "component"
+  },
+  {
+    "id": "condenser",
+    "name": "Condenser",
+    "type": "component"
+  },
+  {
+    "id": "electromagnet",
+    "name": "Electromagnet",
+    "type": "component"
+  },
+  {
+    "id": "ion_injector",
+    "name": "Ion Injector",
+    "type": "component"
+  },
+  {
+    "id": "dome",
+    "name": "Dome",
+    "type": "component"
+  },
+  {
+    "id": "aerogel",
+    "name": "Aerogel",
+    "type": "processed"
+  },
+  {
+    "id": "heat_shield",
+    "name": "Heat Shield",
+    "type": "component"
+  },
+  {
+    "id": "uber_titanium",
+    "name": "Titanoferrite Ingot",
+    "type": "processed"
+  },
+  {
+    "id": "missile_housing",
+    "name": "Missile Housing",
+    "type": "component"
+  },
+  {
+    "id": "nanosyringe",
+    "name": "Nanosyringe",
+    "type": "component"
+  },
+  {
+    "id": "nanofibre",
+    "name": "Nanofibre",
+    "type": "processed"
+  },
+  {
+    "id": "lens",
+    "name": "Lens",
+    "type": "component"
+  },
+  {
+    "id": "substance_fhs_135_493",
+    "name": "Substance #FHS-135-493",
+    "type": "component"
+  },
+  {
+    "id": "plasma_generator",
+    "name": "Plasma Generator",
+    "type": "component"
+  },
+  {
+    "id": "generator",
+    "name": "Generator",
+    "type": "component"
+  },
+  {
+    "id": "rocket_engine",
+    "name": "Rocket Engine",
+    "type": "component"
+  },
+  {
+    "id": "goethite_powder",
+    "name": "Goethite Powder",
+    "type": "processed"
+  },
+  {
+    "id": "rtsc_generator",
+    "name": "RTSC Generator",
+    "type": "processed"
+  },
+  {
+    "id": "rtsc",
+    "name": "RTSC",
+    "type": "processed"
+  },
+  {
+    "id": "pseudorubber_insulator",
+    "name": "Pseudorubber Insulator",
+    "type": "processed"
+  },
+  {
+    "id": "satellite_body",
+    "name": "Satellite Body",
+    "type": "component"
+  },
+  {
+    "id": "plastic_dust",
+    "name": "Plastic Dust",
+    "type": "processed"
+  },
+  {
+    "id": "tracking_device",
+    "name": "Tracking Device",
+    "type": "component"
+  },
+  {
+    "id": "carbon_sonar",
+    "name": "Carbon Sonar",
+    "type": "component"
+  },
+  {
+    "id": "quantum_tranqualizer",
+    "name": "Quantum Tranqualizer",
+    "type": "component"
+  },
+  {
+    "id": "containment_vessel",
+    "name": "Containment Vessel",
+    "type": "component"
+  },
+  {
+    "id": "grenade",
+    "name": "Explosive Charge",
+    "type": "ammo"
+  },
+  {
+    "id": "ion_bomb",
+    "name": "Ion Bomb",
+    "type": "ammo"
+  },
+  {
+    "id": "ion_stabilizer",
+    "name": "Ion Stabilizer",
+    "type": "component"
+  },
+  {
+    "id": "resonator",
+    "name": "Resonator",
+    "type": "component"
+  },
+  {
+    "id": "ion_thrusters",
+    "name": "Ion Thrusters",
+    "type": "component"
+  },
+  {
+    "id": "mars_habitat_base",
+    "name": "Mars Habitat Base",
+    "type": "component"
+  },
+  {
+    "id": "uberfilament",
+    "name": "Uberfilament",
+    "type": "component"
+  },
+  {
+    "id": "molecular_scalpel",
+    "name": "Molecular Scalpel",
+    "type": "component"
+  },
+  {
+    "id": "rna_stabilizer",
+    "name": "RNA Stabilizer",
+    "type": "component"
+  },
+  {
+    "id": "onboard_instruments",
+    "name": "Onboard Instruments",
+    "type": "component"
+  },
+  {
+    "id": "payload_stage",
+    "name": "Payload Stage",
+    "type": "component"
+  },
+  {
+    "id": "propulsion_stage",
+    "name": "Propulsion Stage",
+    "type": "component"
   }
 ]

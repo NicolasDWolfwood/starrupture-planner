@@ -613,6 +613,54 @@
       },
       {
         "output": {
+          "id": "valve",
+          "amount_per_minute": 6
+        },
+        "inputs": [
+          {
+            "id": "titanium_housing",
+            "amount_per_minute": 6
+          },
+          {
+            "id": "titanium_beam",
+            "amount_per_minute": 18
+          },
+          {
+            "id": "titanium_rod",
+            "amount_per_minute": 12
+          },
+          {
+            "id": "nozzle",
+            "amount_per_minute": 6
+          }
+        ]
+      },
+      {
+        "output": {
+          "id": "pump",
+          "amount_per_minute": 5
+        },
+        "inputs": [
+          {
+            "id": "valve",
+            "amount_per_minute": 5
+          },
+          {
+            "id": "turbine",
+            "amount_per_minute": 5
+          },
+          {
+            "id": "impeller",
+            "amount_per_minute": 5
+          },
+          {
+            "id": "sulphuric_acid",
+            "amount_per_minute": 15
+          }
+        ]
+      },
+      {
+        "output": {
           "id": "battery",
           "amount_per_minute": 15
         },
@@ -676,6 +724,675 @@
           {
             "id": "supermagnet",
             "amount_per_minute": 15
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "assembler",
+    "name": "Assembler",
+    "power": 60,
+    "recipes": [
+      {
+        "output": {
+          "id": "pressure_tank",
+          "amount_per_minute": 5
+        },
+        "inputs": [
+          {
+            "id": "heat_sheet",
+            "amount_per_minute": 25
+          },
+          {
+            "id": "titanium_housing",
+            "amount_per_minute": 15
+          },
+          {
+            "id": "pump",
+            "amount_per_minute": 15
+          },
+          {
+            "id": "valve",
+            "amount_per_minute": 10
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "constructorizer",
+    "name": "Constructorizer",
+    "power": 80,
+    "recipes": [
+      {
+        "output": {
+          "id": "airlock",
+          "amount_per_minute": 4
+        },
+        "inputs": [
+          {
+            "id": "scafolding",
+            "amount_per_minute": 4
+          },
+          {
+            "id": "electronics",
+            "amount_per_minute": 12
+          },
+          {
+            "id": "epoxy",
+            "amount_per_minute": 8
+          },
+          {
+            "id": "pressure_tank",
+            "amount_per_minute": 4
+          }
+        ]
+      },
+      {
+        "output": {
+          "id": "anti_radiation_covers",
+          "amount_per_minute": 8
+        },
+        "inputs": [
+          {
+            "id": "reinforced_housing",
+            "amount_per_minute": 8
+          },
+          {
+            "id": "reinforced_frame",
+            "amount_per_minute": 4
+          },
+          {
+            "id": "uber_oil",
+            "amount_per_minute": 4
+          },
+          {
+            "id": "epoxy",
+            "amount_per_minute": 8
+          }
+        ]
+      },
+      {
+        "output": {
+          "id": "bioprinter",
+          "amount_per_minute": 3
+        },
+        "inputs": [
+          {
+            "id": "scanner",
+            "amount_per_minute": 3
+          },
+          {
+            "id": "biofilament",
+            "amount_per_minute": 6
+          },
+          {
+            "id": "epoxy",
+            "amount_per_minute": 6
+          },
+          {
+            "id": "nozzle",
+            "amount_per_minute": 3
+          }
+        ]
+      },
+      {
+        "output": {
+          "id": "control_systems",
+          "amount_per_minute": 4
+        },
+        "inputs": [
+          {
+            "id": "electronics",
+            "amount_per_minute": 12
+          },
+          {
+            "id": "stabilizer",
+            "amount_per_minute": 8
+          },
+          {
+            "id": "reinforced_housing",
+            "amount_per_minute": 4
+          },
+          {
+            "id": "accumulator",
+            "amount_per_minute": 8
+          }
+        ]
+      },
+      {
+        "output": {
+          "id": "converter",
+          "amount_per_minute": 3
+        },
+        "inputs": [
+          {
+            "id": "laser_emitter",
+            "amount_per_minute": 3
+          },
+          {
+            "id": "accumulator",
+            "amount_per_minute": 3
+          },
+          {
+            "id": "superconductor",
+            "amount_per_minute": 6
+          },
+          {
+            "id": "uber_oil",
+            "amount_per_minute": 9
+          }
+        ]
+      },
+      {
+        "output": {
+          "id": "cyclotrone",
+          "amount_per_minute": 4
+        },
+        "inputs": [
+          {
+            "id": "condenser",
+            "amount_per_minute": 4
+          },
+          {
+            "id": "electromagnet",
+            "amount_per_minute": 4
+          },
+          {
+            "id": "ion_injector",
+            "amount_per_minute": 4
+          },
+          {
+            "id": "reinforced_housing",
+            "amount_per_minute": 8
+          }
+        ]
+      },
+      {
+        "output": {
+          "id": "dome",
+          "amount_per_minute": 6
+        },
+        "inputs": [
+          {
+            "id": "glass",
+            "amount_per_minute": 18
+          },
+          {
+            "id": "hardening_agent",
+            "amount_per_minute": 12
+          },
+          {
+            "id": "aerogel",
+            "amount_per_minute": 12
+          },
+          {
+            "id": "reinforced_frame",
+            "amount_per_minute": 6
+          }
+        ]
+      },
+      {
+        "output": {
+          "id": "heat_shield",
+          "amount_per_minute": 10
+        },
+        "inputs": [
+          {
+            "id": "epoxy",
+            "amount_per_minute": 15
+          },
+          {
+            "id": "aerogel",
+            "amount_per_minute": 10
+          },
+          {
+            "id": "ceramics",
+            "amount_per_minute": 15
+          },
+          {
+            "id": "uber_titanium",
+            "amount_per_minute": 10
+          }
+        ]
+      },
+      {
+        "output": {
+          "id": "missile_housing",
+          "amount_per_minute": 4
+        },
+        "inputs": [
+          {
+            "id": "pressure_tank",
+            "amount_per_minute": 4
+          },
+          {
+            "id": "reinforced_housing",
+            "amount_per_minute": 4
+          },
+          {
+            "id": "nozzle",
+            "amount_per_minute": 8
+          },
+          {
+            "id": "valve",
+            "amount_per_minute": 8
+          }
+        ]
+      },
+      {
+        "output": {
+          "id": "nanosyringe",
+          "amount_per_minute": 5
+        },
+        "inputs": [
+          {
+            "id": "nanofibre",
+            "amount_per_minute": 10
+          },
+          {
+            "id": "syringe",
+            "amount_per_minute": 10
+          },
+          {
+            "id": "lens",
+            "amount_per_minute": 10
+          },
+          {
+            "id": "substance_fhs_135_493",
+            "amount_per_minute": 5
+          }
+        ]
+      },
+      {
+        "output": {
+          "id": "plasma_generator",
+          "amount_per_minute": 4
+        },
+        "inputs": [
+          {
+            "id": "laser_emitter",
+            "amount_per_minute": 4
+          },
+          {
+            "id": "generator",
+            "amount_per_minute": 8
+          },
+          {
+            "id": "reinforced_housing",
+            "amount_per_minute": 8
+          },
+          {
+            "id": "ion_injector",
+            "amount_per_minute": 4
+          }
+        ]
+      },
+      {
+        "output": {
+          "id": "rocket_engine",
+          "amount_per_minute": 6
+        },
+        "inputs": [
+          {
+            "id": "nozzle",
+            "amount_per_minute": 18
+          },
+          {
+            "id": "turbine",
+            "amount_per_minute": 6
+          },
+          {
+            "id": "pump",
+            "amount_per_minute": 6
+          },
+          {
+            "id": "goethite_powder",
+            "amount_per_minute": 18
+          }
+        ]
+      },
+      {
+        "output": {
+          "id": "rtsc_generator",
+          "amount_per_minute": 3
+        },
+        "inputs": [
+          {
+            "id": "rtsc",
+            "amount_per_minute": 3
+          },
+          {
+            "id": "generator",
+            "amount_per_minute": 3
+          },
+          {
+            "id": "electromagnetic_coil",
+            "amount_per_minute": 6
+          },
+          {
+            "id": "pseudorubber_insulator",
+            "amount_per_minute": 6
+          }
+        ]
+      },
+      {
+        "output": {
+          "id": "satellite_body",
+          "amount_per_minute": 4
+        },
+        "inputs": [
+          {
+            "id": "reinforced_housing",
+            "amount_per_minute": 8
+          },
+          {
+            "id": "reinforced_frame",
+            "amount_per_minute": 4
+          },
+          {
+            "id": "uber_oil",
+            "amount_per_minute": 8
+          },
+          {
+            "id": "heat_sheet",
+            "amount_per_minute": 12
+          }
+        ]
+      },
+      {
+        "output": {
+          "id": "scafolding",
+          "amount_per_minute": 5
+        },
+        "inputs": [
+          {
+            "id": "calcite_sheets",
+            "amount_per_minute": 10
+          },
+          {
+            "id": "reinforced_frame",
+            "amount_per_minute": 10
+          },
+          {
+            "id": "plastic_dust",
+            "amount_per_minute": 5
+          },
+          {
+            "id": "nanofibre",
+            "amount_per_minute": 5
+          }
+        ]
+      },
+      {
+        "output": {
+          "id": "tracking_device",
+          "amount_per_minute": 3
+        },
+        "inputs": [
+          {
+            "id": "carbon_sonar",
+            "amount_per_minute": 3
+          },
+          {
+            "id": "quantum_tranqualizer",
+            "amount_per_minute": 3
+          },
+          {
+            "id": "lens",
+            "amount_per_minute": 6
+          },
+          {
+            "id": "laser_emitter",
+            "amount_per_minute": 3
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "facturer",
+    "name": "Facturer",
+    "power": 80,
+    "recipes": [
+      {
+        "output": {
+          "id": "containment_vessel",
+          "amount_per_minute": 4
+        },
+        "inputs": [
+          {
+            "id": "anti_radiation_covers",
+            "amount_per_minute": 4
+          },
+          {
+            "id": "pseudorubber_insulator",
+            "amount_per_minute": 8
+          },
+          {
+            "id": "epoxy",
+            "amount_per_minute": 12
+          },
+          {
+            "id": "reinforced_housing",
+            "amount_per_minute": 8
+          },
+          {
+            "id": "pressure_tank",
+            "amount_per_minute": 4
+          }
+        ]
+      },
+      {
+        "output": {
+          "id": "grenade",
+          "amount_per_minute": 6
+        },
+        "inputs": [
+          {
+            "id": "reinforced_housing",
+            "amount_per_minute": 6
+          },
+          {
+            "id": "epoxy",
+            "amount_per_minute": 12
+          },
+          {
+            "id": "explosive",
+            "amount_per_minute": 18
+          },
+          {
+            "id": "battery",
+            "amount_per_minute": 6
+          }
+        ]
+      },
+      {
+        "output": {
+          "id": "ion_bomb",
+          "amount_per_minute": 3
+        },
+        "inputs": [
+          {
+            "id": "ion_injector",
+            "amount_per_minute": 3
+          },
+          {
+            "id": "ion_stabilizer",
+            "amount_per_minute": 3
+          },
+          {
+            "id": "grenade",
+            "amount_per_minute": 6
+          },
+          {
+            "id": "reinforced_housing",
+            "amount_per_minute": 6
+          },
+          {
+            "id": "resonator",
+            "amount_per_minute": 9
+          }
+        ]
+      },
+      {
+        "output": {
+          "id": "ion_thrusters",
+          "amount_per_minute": 6
+        },
+        "inputs": [
+          {
+            "id": "pump",
+            "amount_per_minute": 12
+          },
+          {
+            "id": "pressure_tank",
+            "amount_per_minute": 6
+          },
+          {
+            "id": "ion_injector",
+            "amount_per_minute": 6
+          },
+          {
+            "id": "nozzle",
+            "amount_per_minute": 12
+          }
+        ]
+      },
+      {
+        "output": {
+          "id": "mars_habitat_base",
+          "amount_per_minute": 3
+        },
+        "inputs": [
+          {
+            "id": "uberfilament",
+            "amount_per_minute": 6
+          },
+          {
+            "id": "dome",
+            "amount_per_minute": 3
+          },
+          {
+            "id": "airlock",
+            "amount_per_minute": 3
+          },
+          {
+            "id": "pump",
+            "amount_per_minute": 6
+          },
+          {
+            "id": "scafolding",
+            "amount_per_minute": 9
+          }
+        ]
+      },
+      {
+        "output": {
+          "id": "molecular_scalpel",
+          "amount_per_minute": 3
+        },
+        "inputs": [
+          {
+            "id": "scanner",
+            "amount_per_minute": 3
+          },
+          {
+            "id": "rna_stabilizer",
+            "amount_per_minute": 3
+          },
+          {
+            "id": "nanosyringe",
+            "amount_per_minute": 6
+          },
+          {
+            "id": "lens",
+            "amount_per_minute": 6
+          },
+          {
+            "id": "uber_oil",
+            "amount_per_minute": 12
+          }
+        ]
+      },
+      {
+        "output": {
+          "id": "onboard_instruments",
+          "amount_per_minute": 4
+        },
+        "inputs": [
+          {
+            "id": "electronics",
+            "amount_per_minute": 12
+          },
+          {
+            "id": "stabilizer",
+            "amount_per_minute": 8
+          },
+          {
+            "id": "resonator",
+            "amount_per_minute": 4
+          },
+          {
+            "id": "reinforced_housing",
+            "amount_per_minute": 4
+          }
+        ]
+      },
+      {
+        "output": {
+          "id": "payload_stage",
+          "amount_per_minute": 3
+        },
+        "inputs": [
+          {
+            "id": "reinforced_housing",
+            "amount_per_minute": 6
+          },
+          {
+            "id": "ion_thrusters",
+            "amount_per_minute": 6
+          },
+          {
+            "id": "onboard_instruments",
+            "amount_per_minute": 3
+          },
+          {
+            "id": "heat_shield",
+            "amount_per_minute": 9
+          },
+          {
+            "id": "nanofibre",
+            "amount_per_minute": 6
+          }
+        ]
+      },
+      {
+        "output": {
+          "id": "propulsion_stage",
+          "amount_per_minute": 3
+        },
+        "inputs": [
+          {
+            "id": "pressure_tank",
+            "amount_per_minute": 6
+          },
+          {
+            "id": "rocket_engine",
+            "amount_per_minute": 9
+          },
+          {
+            "id": "valve",
+            "amount_per_minute": 9
+          },
+          {
+            "id": "pump",
+            "amount_per_minute": 9
+          },
+          {
+            "id": "onboard_instruments",
+            "amount_per_minute": 3
           }
         ]
       }

@@ -36,8 +36,13 @@ export const ItemImage = ({
         style={style}
         onError={(e) => {
           if (showFallback) {
-            // Fallback to showing the item ID if image doesn't exist
             const target = e.target as HTMLImageElement;
+            if (!target.dataset.fallback) {
+              target.dataset.fallback = 'webp';
+              target.src = `./icons/items/${itemId}.webp`;
+              return;
+            }
+            // Fallback to showing the item ID if image doesn't exist
             target.style.display = 'none';
             const fallback = target.nextElementSibling as HTMLElement;
             if (fallback) {

@@ -2,7 +2,8 @@ import dagre from 'dagre';
 import type { Node, Edge } from '@xyflow/react';
 import { Position as ReactFlowPosition } from '@xyflow/react';
 
-import type { Item, Building, ProductionNode, OrbitalCargoLauncherNode } from './types';
+import type { Item, Building, ProductionNode, OrbitalCargoLauncherNode, OreQuality } from './types';
+import { ORE_QUALITY_LABELS } from './types';
 import type { Corporation, Level } from '../../state/db';
 import { buildProductionFlow, getItemName } from './productionFlowBuilder';
 import { ItemImage, BuildingImage } from '../ui';
@@ -16,6 +17,8 @@ export interface FlowDataGenerationParams {
     items: Item[];
     getItemColor: (itemId: string) => string;
     getBuildingColor: (buildingId: string) => string;
+    oreQualityByItem: Record<string, OreQuality>;
+    onOreQualityChange?: (itemId: string, quality: OreQuality) => void;
 }
 
 export interface FlowData {
@@ -41,7 +44,9 @@ export const generateReactFlowData = ({
     levels,
     items,
     getItemColor,
-    getBuildingColor
+    getBuildingColor,
+    oreQualityByItem,
+    onOreQualityChange
 }: FlowDataGenerationParams): FlowData => {
     // Use fallback of 1 if amount is 0 or invalid (for temporary empty input state)
     const validAmount = targetAmount > 0 ? targetAmount : 1;
@@ -49,7 +54,8 @@ export const generateReactFlowData = ({
     // Build the production flow using our separate module
     const { nodes: flowNodes, edges: flowEdges } = buildProductionFlow({
         targetItemId,
-        targetAmount: validAmount
+        targetAmount: validAmount,
+        oreQualityByItem
     }, buildings, corporations, levels);
 
     // Create Dagre graph for automatic layout
@@ -95,6 +101,10 @@ export const generateReactFlowData = ({
         };
 
         const isLauncher = isOrbitalCargoLauncher(node);
+        const isOreExcavator = node.buildingId === 'ore_excavator';
+        const oreQuality = isOreExcavator
+            ? (oreQualityByItem[node.outputItem] ?? 'normal')
+            : null;
 
         return {
             id: `node_${index}`,
@@ -209,6 +219,24 @@ export const generateReactFlowData = ({
                                 </div>
                             </div>
                         </div>
+                        {isOreExcavator && oreQuality && (
+                            <div className="mt-2">
+                                <select
+                                    className="select select-xs nodrag"
+                                    value={oreQuality}
+                                    onChange={(event) => {
+                                        const value = event.target.value as OreQuality;
+                                        onOreQualityChange?.(node.outputItem, value);
+                                    }}
+                                >
+                                    {Object.entries(ORE_QUALITY_LABELS).map(([value, label]) => (
+                                        <option key={value} value={value}>
+                                            {label}
+                                        </option>
+                                    ))}
+                                </select>
+                            </div>
+                        )}
                     </div>
                 ),
             },

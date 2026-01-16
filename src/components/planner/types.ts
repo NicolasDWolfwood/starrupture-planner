@@ -119,6 +119,8 @@ export interface ProductionFlowParams {
     targetItemId: string;
     /** Desired production rate in units per minute */
     targetAmount?: number;
+    /** Optional ore quality overrides by ore item ID */
+    oreQualityByItem?: Record<string, OreQuality>;
 }
 
 /**
@@ -135,3 +137,20 @@ export interface ProductionFlowResult {
     /** List of material flow edges between buildings */
     edges: FlowEdge[];
 }
+
+/**
+ * Ore quality options for ore excavator output rates
+ */
+export type OreQuality = 'impure' | 'normal' | 'pure';
+
+export const ORE_QUALITY_LABELS: Record<OreQuality, string> = {
+    impure: 'Impure',
+    normal: 'Normal',
+    pure: 'Pure'
+};
+
+export const ORE_QUALITY_RATES: Record<OreQuality, number> = {
+    impure: 60,
+    normal: 120,
+    pure: 240
+};

@@ -20,6 +20,7 @@ import type {
     ProductionNode,
     OrbitalCargoLauncherNode
 } from './types';
+import { ORE_QUALITY_RATES } from './types';
 import type { Corporation } from '../../state/db';
 
 /**
@@ -68,7 +69,7 @@ function getLevelCost(level: number, levels: any[]): number {
  * @returns Complete production flow with nodes and edges
  */
 export function buildProductionFlow(params: ProductionFlowParams, buildings: Building[], corporations: Corporation[], levels: any[]): ProductionFlowResult {
-    const { targetItemId, targetAmount = 60 } = params;
+    const { targetItemId, targetAmount = 60, oreQualityByItem = {} } = params;
     
     // Internal state for building the flow
     const flowNodes: ProductionNode[] = [];
@@ -128,8 +129,11 @@ export function buildProductionFlow(params: ProductionFlowParams, buildings: Bui
         const newPath = new Set(currentPath);
         newPath.add(itemId);
 
-        const { recipe } = recipeInfo;
-        const outputRate = recipe.output.amount_per_minute;
+        const { recipe, building } = recipeInfo;
+        const oreQuality = oreQualityByItem[itemId] ?? 'normal';
+        const outputRate = building.id === 'ore_excavator'
+            ? ORE_QUALITY_RATES[oreQuality]
+            : recipe.output.amount_per_minute;
         const buildingsNeeded = requiredAmount / outputRate;
 
         // Recursively calculate demand for inputs
@@ -176,7 +180,10 @@ export function buildProductionFlow(params: ProductionFlowParams, buildings: Bui
         
         // Use the pre-calculated total demand for this item
         const totalDemand = itemDemand.get(itemId) || 0;
-        const outputRate = recipe.output.amount_per_minute;
+        const oreQuality = oreQualityByItem[itemId] ?? 'normal';
+        const outputRate = building.id === 'ore_excavator'
+            ? ORE_QUALITY_RATES[oreQuality]
+            : recipe.output.amount_per_minute;
         const buildingsNeeded = totalDemand / outputRate;
 
         // Create a flow node representing this building in the production chain

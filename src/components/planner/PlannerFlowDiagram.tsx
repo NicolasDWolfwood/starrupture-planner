@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import {
     ReactFlow,
     type Node,
@@ -13,7 +13,7 @@ import '@xyflow/react/dist/style.css';
 
 import { useSubscription } from '@flexsurfer/reflex';
 import { SUB_IDS } from '../../state/sub-ids';
-import type { Item, Building } from './types';
+import type { Item, Building, OreQuality } from './types';
 import type { Corporation, Level } from '../../state/db';
 import { generateReactFlowData } from './plannerFlowUtils';
 import { usePlannerColors } from './hooks';
@@ -50,6 +50,15 @@ export const PlannerFlowDiagram: React.FC<PlannerFlowDiagramProps> = ({
     // React Flow state
     const [nodes, setNodes, onNodesChange] = useNodesState<Node>([]);
     const [edges, setEdges, onEdgesChange] = useEdgesState<Edge>([]);
+    const [oreQualityByItem, setOreQualityByItem] = useState<Record<string, OreQuality>>({});
+    const shouldFitView = useRef(true);
+
+    const handleOreQualityChange = useCallback((itemId: string, quality: OreQuality) => {
+        setOreQualityByItem((current) => ({
+            ...current,
+            [itemId]: quality
+        }));
+    }, []);
 
     // Generate flow data when inputs change
     const updateFlowData = useCallback(() => {
@@ -62,7 +71,9 @@ export const PlannerFlowDiagram: React.FC<PlannerFlowDiagramProps> = ({
                 levels,
                 items,
                 getItemColor,
-                getBuildingColor
+                getBuildingColor,
+                oreQualityByItem,
+                onOreQualityChange: handleOreQualityChange
             });
             
             setNodes(newNodes);
@@ -80,6 +91,8 @@ export const PlannerFlowDiagram: React.FC<PlannerFlowDiagramProps> = ({
         items,
         getItemColor,
         getBuildingColor,
+        oreQualityByItem,
+        handleOreQualityChange,
         setNodes,
         setEdges
     ]);
@@ -89,9 +102,15 @@ export const PlannerFlowDiagram: React.FC<PlannerFlowDiagramProps> = ({
         updateFlowData();
     }, [updateFlowData]);
 
+    // Only auto-fit on initial load or target/item changes
+    useEffect(() => {
+        shouldFitView.current = true;
+    }, [selectedItemId, targetAmount]);
+
     // Auto-fit view when nodes change
     useEffect(() => {
-        if (nodes.length > 0) {
+        if (nodes.length > 0 && shouldFitView.current) {
+            shouldFitView.current = false;
             // Small delay to ensure DOM is updated
             setTimeout(() => {
                 fitView({ duration: 300, padding: 0.1 });
