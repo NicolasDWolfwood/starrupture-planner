@@ -1,5 +1,30 @@
 [
   {
+    "id": "ore_calcium",
+    "name": "Calcium Ore",
+    "type": "raw"
+  },
+  {
+    "id": "crude_oil",
+    "name": "Crude Oil",
+    "type": "raw"
+  },
+  {
+    "id": "ore_goethite",
+    "name": "Goethite Ore",
+    "type": "raw"
+  },
+  {
+    "id": "helium",
+    "name": "Helium-3",
+    "type": "raw"
+  },
+  {
+    "id": "ore_sulphur",
+    "name": "Sulphur Ore",
+    "type": "raw"
+  },
+  {
     "id": "ore_titanium",
     "name": "Titanium Ore",
     "type": "raw"
@@ -10,38 +35,8 @@
     "type": "raw"
   },
   {
-    "id": "ore_calcium",
-    "name": "Calcium Ore",
-    "type": "raw"
-  },
-  {
-    "id": "ore_sulphur",
-    "name": "Sulphur Ore",
-    "type": "raw"
-  },
-  {
-    "id": "ore_goethite",
-    "name": "Goethite Ore",
-    "type": "raw"
-  },
-  {
-    "id": "helium",
-    "name": "Helium",
-    "type": "raw"
-  },
-  {
-    "id": "crude_oil",
-    "name": "Crude Oil",
-    "type": "raw"
-  },
-  {
-    "id": "bar_titanium",
-    "name": "Titanium Bar",
-    "type": "processed"
-  },
-  {
-    "id": "bar_wolfram",
-    "name": "Wolfram Bar",
+    "id": "battery",
+    "name": "Battery",
     "type": "processed"
   },
   {
@@ -55,13 +50,23 @@
     "type": "processed"
   },
   {
-    "id": "powder_wolfram",
-    "name": "Wolfram Powder",
+    "id": "ceramics",
+    "name": "Ceramics",
     "type": "processed"
   },
   {
-    "id": "ceramics",
-    "name": "Ceramics",
+    "id": "explosive",
+    "name": "Chemicals",
+    "type": "processed"
+  },
+  {
+    "id": "electromagnetic_coil",
+    "name": "Electromagnetic Coil",
+    "type": "processed"
+  },
+  {
+    "id": "electronics",
+    "name": "Electronics",
     "type": "processed"
   },
   {
@@ -70,13 +75,8 @@
     "type": "processed"
   },
   {
-    "id": "titanium_housing",
-    "name": "Titanium Housing",
-    "type": "processed"
-  },
-  {
-    "id": "explosive",
-    "name": "Explosive",
+    "id": "hardening_agent",
+    "name": "Hardening Agent",
     "type": "processed"
   },
   {
@@ -85,8 +85,33 @@
     "type": "processed"
   },
   {
-    "id": "synthetic_silicon",
-    "name": "Synthetic Silicon",
+    "id": "impeller",
+    "name": "Impeller",
+    "type": "processed"
+  },
+  {
+    "id": "inductor",
+    "name": "Inductor",
+    "type": "processed"
+  },
+  {
+    "id": "intermediate_building_material",
+    "name": "Intermediate Building Material",
+    "type": "processed"
+  },
+  {
+    "id": "nozzle",
+    "name": "Nozzle",
+    "type": "processed"
+  },
+  {
+    "id": "pressurized_helium",
+    "name": "Pressurized Helium",
+    "type": "processed"
+  },
+  {
+    "id": "sulphuric_acid",
+    "name": "Sulphuric Acid",
     "type": "processed"
   },
   {
@@ -95,9 +120,39 @@
     "type": "processed"
   },
   {
-    "id": "sulphuric_acid",
-    "name": "Sulphuric Acid",
+    "id": "synthetic_silicon",
+    "name": "Synthetic Silicon",
     "type": "processed"
+  },
+  {
+    "id": "bar_titanium",
+    "name": "Titanium Bar",
+    "type": "processed"
+  },
+  {
+    "id": "titanium_housing",
+    "name": "Titanium Housing",
+    "type": "processed"
+  },
+  {
+    "id": "turbine",
+    "name": "Turbine",
+    "type": "processed"
+  },
+  {
+    "id": "bar_wolfram",
+    "name": "Wolfram Bar",
+    "type": "processed"
+  },
+  {
+    "id": "powder_wolfram",
+    "name": "Wolfram Powder",
+    "type": "processed"
+  },
+  {
+    "id": "syringe",
+    "name": "Applicator",
+    "type": "component"
   },
   {
     "id": "basic_building",
@@ -107,6 +162,26 @@
   {
     "id": "calcite_sheets",
     "name": "Calcite Sheets",
+    "type": "component"
+  },
+  {
+    "id": "pressure_tank",
+    "name": "Pressure Tank",
+    "type": "component"
+  },
+  {
+    "id": "rotor",
+    "name": "Rotor",
+    "type": "component"
+  },
+  {
+    "id": "stabilizer",
+    "name": "Stabilizer",
+    "type": "component"
+  },
+  {
+    "id": "stator",
+    "name": "Stator",
     "type": "component"
   },
   {
@@ -125,6 +200,16 @@
     "type": "component"
   },
   {
+    "id": "tube",
+    "name": "Tube",
+    "type": "component"
+  },
+  {
+    "id": "valve",
+    "name": "Valve",
+    "type": "component"
+  },
+  {
     "id": "wolfram_plate",
     "name": "Wolfram Plate",
     "type": "component"
@@ -135,63 +220,18 @@
     "type": "component"
   },
   {
-    "id": "rotor",
-    "name": "Rotor",
-    "type": "component"
-  },
-  {
-    "id": "tube",
-    "name": "Tube",
-    "type": "component"
-  },
-  {
-    "id": "stabilizer",
-    "name": "Stabilizer",
-    "type": "component"
-  },
-  {
-    "id": "stator",
-    "name": "Stator",
-    "type": "component"
-  },
-  {
-    "id": "electronics",
-    "name": "Electronics",
-    "type": "component"
-  },
-  {
-    "id": "syringe",
-    "name": "Syringe",
-    "type": "component"
-  },    
-  {
-    "id": "inductor",
-    "name": "Inductor",
-    "type": "component"
-  },
-  {
-    "id": "valve",
-    "name": "Valve",  
-    "type": "component"
-  },
-  {
-    "id": "turbine",
-    "name": "Turbine",
-    "type": "component"
-  },
-  {
-    "id": "nozzle",
-    "name": "Nozzle",
-    "type": "component"
-  },
-  {
-    "id": "pressure_tank",
-    "name": "Pressure Tank",
-    "type": "component"
+    "id": "heavy_ammo_item",
+    "name": "Heavy Ammo",
+    "type": "ammo"
   },
   {
     "id": "pistol_ammo",
     "name": "Pistol Ammo",
+    "type": "ammo"
+  },
+  {
+    "id": "shotgun_ammo_item",
+    "name": "Shotgun Ammo",
     "type": "ammo"
   },
   {
